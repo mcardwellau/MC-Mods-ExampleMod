@@ -1,6 +1,10 @@
 package au.cardwell.examplemod;
 
+import au.cardwell.examplemod.items.ModCreativeModTabs;
+import au.cardwell.examplemod.items.ModItems;
 import com.mojang.logging.LogUtils;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -27,6 +31,10 @@ public class ExampleMod
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModCreativeModTabs.register(modEventBus);
+
+        ModItems.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -42,7 +50,14 @@ public class ExampleMod
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-
+        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES)
+        {
+            event.accept(ModItems.DILDO);
+        }
+        else if (event.getTabKey() == CreativeModeTabs.COMBAT)
+        {
+            event.accept(ModItems.DEODORANT);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
