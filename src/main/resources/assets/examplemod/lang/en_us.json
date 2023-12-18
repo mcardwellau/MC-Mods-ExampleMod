@@ -1,5 +1,8 @@
 {
   "item.examplemod.dildo": "Dildo",
   "item.examplemod.deodorant": "Deodorant",
+  "item.examplemod.ruby": "Ruby",
+  "Item.examplemod.raw_ruby": "Raw Ruby",
+  "block.examplemod.ruby_block": "Block of Ruby",
   "creativetab.example_tab": "Example Mod"
 }

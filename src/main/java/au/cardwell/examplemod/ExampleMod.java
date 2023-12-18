@@ -1,10 +1,10 @@
 package au.cardwell.examplemod;
 
-import au.cardwell.examplemod.items.ModCreativeModTabs;
+import au.cardwell.examplemod.blocks.ModBlocks;
 import au.cardwell.examplemod.items.ModItems;
 import com.mojang.logging.LogUtils;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -31,9 +31,11 @@ public class ExampleMod
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModCreativeModTabs.register(modEventBus);
+        ModCreativeModeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
+
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -47,16 +49,12 @@ public class ExampleMod
 
     }
 
-    // Add the example block item to the building blocks tab
+    // Add items/blocks to existing creative mode tabs
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES)
         {
-            event.accept(ModItems.DILDO);
-        }
-        else if (event.getTabKey() == CreativeModeTabs.COMBAT)
-        {
-            event.accept(ModItems.DEODORANT);
+            event.accept(Blocks.BARRIER);
         }
     }
 
