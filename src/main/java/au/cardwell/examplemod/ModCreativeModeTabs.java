@@ -32,6 +32,7 @@ public class ModCreativeModeTabs
                         //Blocks
                         pOutput.accept(ModBlocks.RUBY_BLOCK.get());
                         pOutput.accept(ModBlocks.RAW_RUBY_BLOCK.get());
+                        pOutput.accept(ModBlocks.SOUND_BLOCK.get());
                         //Ores
                         pOutput.accept(ModBlocks.RUBY_ORE.get());
                         pOutput.accept(ModBlocks.DEEPSLATE_RUBY_ORE.get());
