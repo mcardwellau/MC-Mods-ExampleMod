@@ -29,6 +29,8 @@ public class ModCreativeModeTabs
                         pOutput.accept(ModItems.RUBY.get());
                         pOutput.accept(ModItems.RAW_RUBY.get());
                         pOutput.accept(ModItems.ORE_FINDER.get());
+                        //Foods
+                        pOutput.accept(ModItems.COCAINE.get());
                         //Blocks
                         pOutput.accept(ModBlocks.RUBY_BLOCK.get());
                         pOutput.accept(ModBlocks.RAW_RUBY_BLOCK.get());

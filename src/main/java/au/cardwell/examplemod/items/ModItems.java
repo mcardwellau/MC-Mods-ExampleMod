@@ -19,6 +19,8 @@ public class ModItems
     public static final RegistryObject<Item> RAW_RUBY = ITEMS.register("raw_ruby", () -> new Item(new Item.Properties()));
     //Custom Items
     public static final RegistryObject<Item> ORE_FINDER = ITEMS.register("ore_finder", () -> new OreFinderItem(new Item.Properties().durability(100)));
+    //Foods
+    public static final RegistryObject<Item> COCAINE = ITEMS.register("cocaine", () -> new Item(new Item.Properties().food(ModFoods.COCAINE)));
     public static void register(IEventBus eventBus)
     {
         ITEMS.register(eventBus);
